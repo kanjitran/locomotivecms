@@ -1,0 +1,11 @@
+/home/local/ELARION/lamtq/.rvm/rubies/ruby-2.2.2/bin/ruby -r ./siteconf20170316-10133-wt9xuk.rb extconf.rb
+creating Makefile
+
+make "DESTDIR=" clean
+
+make "DESTDIR="
+compiling debug_inspector.c
+linking shared-object debug_inspector.so
+
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 debug_inspector.so ./.gem.20170316-10133-1x0o0wl

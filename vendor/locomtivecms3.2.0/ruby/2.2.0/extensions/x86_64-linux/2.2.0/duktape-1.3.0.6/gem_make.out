@@ -1,0 +1,73 @@
+/home/local/ELARION/lamtq/.rvm/rubies/ruby-2.2.2/bin/ruby -r ./siteconf20170316-10133-1l8lvr4.rb extconf.rb
+checking for rb_sym2str()... yes
+creating Makefile
+
+make "DESTDIR=" clean
+
+make "DESTDIR="
+compiling duktape_ext.c
+duktape_ext.c: In function ‘ctx_alloc’:
+duktape_ext.c:69:3: warning: ISO C90 forbids mixed declarations and code [-Wdeclaration-after-statement]
+   struct state *state = malloc(sizeof(struct state));
+   ^
+duktape_ext.c: In function ‘encode_cesu8’:
+duktape_ext.c:142:3: warning: ISO C90 forbids mixed declarations and code [-Wdeclaration-after-statement]
+   long len = RSTRING_LEN(utf16) / 2;
+   ^
+duktape_ext.c: In function ‘decode_cesu8’:
+duktape_ext.c:166:5: warning: ISO C90 forbids mixed declarations and code [-Wdeclaration-after-statement]
+     unsigned short code = utf8_to_uv(ptr, &len);
+     ^
+duktape_ext.c:172:3: warning: ISO C90 forbids mixed declarations and code [-Wdeclaration-after-statement]
+   VALUE utf8res = rb_str_conv_enc(res, utf16enc, rb_utf8_encoding());
+   ^
+duktape_ext.c: In function ‘ctx_stack_to_value’:
+duktape_ext.c:203:7: warning: ISO C90 forbids mixed declarations and code [-Wdeclaration-after-statement]
+       VALUE str = rb_str_new(buf, len);
+       ^
+duktape_ext.c: In function ‘raise_ctx_error’:
+duktape_ext.c:330:3: warning: ISO C90 forbids mixed declarations and code [-Wdeclaration-after-statement]
+   const char *name = duk_safe_to_string(ctx, -1);
+   ^
+duktape_ext.c:333:3: warning: ISO C90 forbids mixed declarations and code [-Wdeclaration-after-statement]
+   const char *message = duk_to_string(ctx, -1);
+   ^
+duktape_ext.c: In function ‘ctx_eval_string’:
+duktape_ext.c:355:3: warning: ISO C90 forbids mixed declarations and code [-Wdeclaration-after-statement]
+   VALUE source;
+   ^
+duktape_ext.c:378:3: warning: ISO C90 forbids mixed declarations and code [-Wdeclaration-after-statement]
+   VALUE res = ctx_stack_to_value(state, -1);
+   ^
+duktape_ext.c: In function ‘ctx_exec_string’:
+duktape_ext.c:399:3: warning: ISO C90 forbids mixed declarations and code [-Wdeclaration-after-statement]
+   VALUE source;
+   ^
+duktape_ext.c: In function ‘ctx_get_one_prop’:
+duktape_ext.c:436:3: warning: ISO C90 forbids mixed declarations and code [-Wdeclaration-after-statement]
+   duk_bool_t exists = duk_get_prop(ctx, -2);
+   ^
+duktape_ext.c: In function ‘ctx_get_nested_prop’:
+duktape_ext.c:457:7: warning: ISO C90 forbids mixed declarations and code [-Wdeclaration-after-statement]
+       long len = RARRAY_LEN(props);
+       ^
+duktape_ext.c: In function ‘ctx_get_prop’:
+duktape_ext.c:494:3: warning: ISO C90 forbids mixed declarations and code [-Wdeclaration-after-statement]
+   VALUE res = ctx_stack_to_value(state, -1);
+   ^
+duktape_ext.c: In function ‘ctx_call_prop’:
+duktape_ext.c:517:3: warning: ISO C90 forbids mixed declarations and code [-Wdeclaration-after-statement]
+   VALUE prop;
+   ^
+duktape_ext.c:535:3: warning: ISO C90 forbids mixed declarations and code [-Wdeclaration-after-statement]
+   VALUE res = ctx_stack_to_value(state, -1);
+   ^
+duktape_ext.c: In function ‘ctx_initialize’:
+duktape_ext.c:654:3: warning: ISO C90 forbids mixed declarations and code [-Wdeclaration-after-statement]
+   VALUE options;
+   ^
+compiling duktape.c
+linking shared-object duktape_ext.so
+
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 duktape_ext.so ./.gem.20170316-10133-117d0bn
